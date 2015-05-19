@@ -16,9 +16,9 @@ exports.load = function(req, res, next, quizId) {
 exports.index = function(req, res) {
   if (req.query.search===undefined) {
     models.Quiz.findAll().then(
-      function(quizes) {
-        res.render('quizes/index.ejs', {quizes: quizes, errors: []});
-      }
+    function(quizes) {
+      res.render('quizes/index.ejs', {quizes: quizes, errors: []});
+    }
     ).catch(function(error){next(error)});
   }
   else {
@@ -47,6 +47,7 @@ exports.answer = function(req, res) {
   );
 };
 
+// GET /quizes/new
 exports.new = function(req, res) {
   var quiz = models.Quiz.build( // crea objeto quiz 
     {pregunta: "Pregunta", respuesta: "Respuesta"}
