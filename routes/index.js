@@ -9,10 +9,9 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz', errors: []});
 });
 // Pagina de creditos
-router.get('/author', function(req, res) {
-  res.render('author', { errors: []});
+router.get('/author', function(req, res){
+  res.render('author', {creditos: 'Autores'});
 });
-
 // Autoload de comandos con :quizId
 router.param('quizId', quizController.load); //autoload :quizId
 
