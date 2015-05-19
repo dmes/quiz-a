@@ -32,17 +32,18 @@
         <span><a href="https://github.com/esaavedra94/quiz">GitHub</a></span>
       </nav>
 
-      <section class="main" id="s1">
-       <% if (errors.length) { %>
-        <span id='ErrorMsgs'>
-          <b>Se han encontrado los siguientes errores:</b><br/>
-          <% for (var i in errors) { %>
-             <span> <%= errors[i].message %> </span><br/>
-          <% } %>
-        </span>
+  <section class="main" id="s1">
+    <% if (errors.length) { %>
+      <span id='ErrorMsgs'>
+        Corregir errores:<br/>
+        <% for (var i in errors) { %>
+           <span> <%= errors[i].message %> </span><br/>
         <% } %>
-        <div> <%- body %> </div>
-      </section>
+      </span>
+    <% } %>
+
+    <div><%- body %></div>
+  </section>
 
     <footer class="main" id="f1">
       <p><a href="http://es.wikipedia.org/wiki/Quiz">
